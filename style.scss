@@ -44,6 +44,102 @@ $Very-Dark-Desaturated-Violet : rgb(62, 39, 83);
 // (radio button outline)
 $Very-Light-Magenta : rgb(229, 112, 255);
 
+
+@keyframes configure-clockwise {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes configure-xclockwise {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    25% {
+        transform: rotate(-45deg);
+    }
+
+    50% {
+        transform: rotate(-135deg);
+    }
+
+    75% {
+        transform: rotate(-225deg);
+    }
+
+    100% {
+        transform: rotate(-315deg);
+    }
+}
+
+.loader {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: White;
+    transition: opacity .25s ease-out;
+
+    .spinner-box {
+        transition: opacity .5s ease-out;
+    }
+
+    .configure-border-1 {
+        width: 115px;
+        height: 115px;
+        padding: 3px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $Light-Magenta;
+        animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+    }
+
+    .configure-border-2 {
+        width: 115px;
+        height: 115px;
+        padding: 3px;
+        left: -115px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $Light-Violet;
+        transform: rotate(45deg);
+        animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+    }
+
+    .configure-core {
+        width: 100%;
+        height: 100%;
+        background-color: $Light-Grayish-Violet;
+    }
+}
+
+
+
+
 body {
     background-color: $White;
     overflow-x: hidden;
