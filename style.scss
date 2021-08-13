@@ -1,0 +1,328 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+
+}
+
+/*// Colors */
+
+/*// #### Text */
+
+// (sub-heading at the top of the app UI)
+$Pale-Violet : rgb(216, 158, 255);
+// (chat on the left)
+$Moderate-Violet : rgb(146, 65, 200);
+// (chat on the right)
+$Desaturated-Dark-Violet : rgb(110, 93, 126);
+// (placeholder text)
+$Grayish-Blue : rgb(198, 202, 205);
+// (main heading)
+$Very-Dark-Desaturated-Violet : hsl(271, 36%, 24%);
+// (paragraph)
+$Dark-Grayish-Violet : rgb(163, 157, 170);
+
+/* // #### Gradients */
+
+// These two colors are the vibrant background colors
+//  you see throughout the design and are applied as a linear gradient:
+$Light-Magenta: rgb(233, 66, 255);
+$Light-Violet: rgb(136, 56, 255);
+
+
+
+/* // ### Secondary */
+
+$White: rgb(255, 255, 255);
+// (app background)
+$Light-Grayish-Violet : rgb(245, 243, 247);
+// (submit button background)
+$Very-Dark-Desaturated-Violet : rgb(62, 39, 83);
+// (radio button outline)
+$Very-Light-Magenta : rgb(229, 112, 255);
+
+body {
+    background-color: $White;
+    overflow-x: hidden;
+}
+
+
+
+.container {
+    max-width: 850px;
+    margin: 150px auto 0 auto;
+    padding: 0 50px;
+    transition: margin .25s ease-in;
+}
+
+main {
+    display: grid;
+    grid-template-columns: [a] 250px [b] auto;
+    column-gap: 120px;
+
+    .mobile {
+        cursor: pointer;
+        height: 474px;
+        max-height: 474px;
+        width: 250px;
+        margin: auto;
+
+        grid-area: a;
+        justify-self: unset;
+        background-color: $Light-Grayish-Violet;
+        border-radius: 30px;
+        border: 10px solid $White;
+        position: relative;
+        display: grid;
+        overflow: hidden;
+        box-shadow: 15px 20px 30px 0px rgba(0, 0, 0, 0.15);
+
+        .notch {
+            position: absolute;
+            width: 120px;
+            height: 15px;
+            background-color: $White;
+            justify-self: center;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .head {
+            height: 65px;
+            background-image: linear-gradient(to right, $Light-Violet, $Light-Magenta);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 25px 15px 15px 15px;
+            border-radius: 5px;
+
+            img:first-of-type {
+                height: 10px;
+                width: auto;
+                transform: rotate(180deg);
+            }
+
+            img:nth-of-type(2) {
+                margin: 0 10px;
+            }
+
+            img:last-of-type {
+                margin-left: auto;
+                height: 10px;
+                width: auto;
+            }
+
+            .head__upper {
+
+                h3 {
+                    display: inline;
+                    font-size: 14px;
+                    color: $White;
+                }
+
+                span {
+                    display: block;
+                    font-size: 12px;
+                    color: $Pale-Violet;
+                }
+
+            }
+
+            .avatar {
+                height: 30px;
+                width: auto;
+                border-radius: 50%;
+                border: 2px solid $White;
+            }
+
+
+        }
+
+        .msg {
+            span {
+                display: block;
+                max-width: 125px;
+                font-size: 8px;
+                margin-top: 10px;
+                padding: 7.5px;
+
+            }
+        }
+
+        .msg1 {
+            span {
+                color: $Moderate-Violet;
+                background-color: rgba($Pale-Violet, .25);
+                margin-left: 10px;
+                border-radius: 10px 10px 10px 2.5px;
+            }
+
+        }
+
+        .msg2 {
+
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+
+            span {
+                margin-left: auto;
+                background-color: $White;
+                color: $Desaturated-Dark-Violet;
+                margin-right: 10px;
+                border-radius: 10px 10px 2.5px 10px;
+            }
+
+            span:first-of-type {
+                display: flex;
+                flex-wrap: wrap;
+                min-width: 150px;
+                column-gap: 5px;
+                justify-content: flex-end;
+                background-color: transparent;
+                padding: 0;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                    object-fit: contain;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        .priceMsg {
+            background-image: linear-gradient(to right, $Light-Magenta, $Light-Violet);
+            color: $White !important;
+            display: flex !important;
+            align-items: center !important;
+
+            b {
+                padding-right: 2.5px;
+                font-size: 10px;
+                margin-left: auto;
+            }
+
+            .priceMsg__circle {
+                display: inline-block;
+                height: 10px;
+                width: 10px;
+                border-radius: 50%;
+                border: 1px solid rgba($White, .5);
+                margin-right: 5px;
+            }
+        }
+
+        .foot {
+            padding: 10px;
+
+            span {
+                display: flex;
+                font-size: 8px;
+                color: $Grayish-Blue;
+                background-color: $White;
+                padding: 5px 5px 5px 18px;
+                border-radius: 20px;
+                justify-content: space-between;
+                align-items: center;
+
+                div {
+                    display: inline-flex;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: $Very-Dark-Desaturated-Violet;
+                    justify-content: center;
+                    place-items: center;
+
+                    img {
+                        height: 10px;
+                        width: auto;
+                    }
+                }
+            }
+        }
+
+
+
+    }
+
+    .intro {
+        grid-area: b;
+        margin-top: 170px;
+        transition: margin .25s ease-in;
+
+        h1 {
+            font-size: 36px;
+            color: $Very-Dark-Desaturated-Violet;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 16px;
+            color: $Dark-Grayish-Violet;
+            font-weight: 300;
+        }
+    }
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $White;
+    z-index: -1;
+    display: flex;
+    justify-content: space-between;
+
+
+    .blue_block {
+        position: absolute;
+        top: 0;
+        left: -5vw;
+        height: 95vw;
+        max-height: 700px;
+        width: 30vw;
+        min-width: 350px;
+        background-image: linear-gradient($Light-Magenta, $Light-Violet);
+        border-radius: 0 0 50vw 50vw;
+    }
+
+    .gray_block {
+        position: absolute;
+        bottom: 0;
+        right: -5vw;
+        height: 95vw;
+        max-height: 700px;
+        width: 30vw;
+        min-width: 350px;
+        background-color: $Light-Grayish-Violet;
+        margin-top: auto;
+        border-radius: 50vw 50vw 0 0;
+    }
+}
+
+@media only screen and (max-width : 670px) {
+    .container {
+        width: 100vw;
+        margin-top: 70px;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: [a] auto [b] auto;
+        column-gap: 0px;
+
+
+        .intro {
+            margin-top: 60px;
+            align-self: center;
+        }
+    }
+}
